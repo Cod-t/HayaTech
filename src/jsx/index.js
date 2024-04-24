@@ -107,6 +107,7 @@ import Toastr from "./components/PluginsMenu/Toastr/Toastr";
 import Lightgallery from "./components/PluginsMenu/Lightgallery/Lightgallery";
 
 import { ThemeContext } from "../context/ThemeContext";
+import AddProfile from "./components/AppsMenu/AppProfile/AddProfile.js";
 
 const Markup = () => {
   const allroutes = [
@@ -131,6 +132,7 @@ const Markup = () => {
     { url: "blog-category", component: <BlogCategory /> },
     /// Apps
     { url: "app-profile", component: <AppProfile /> },
+    { url: "add-patient", component: <AddProfile /> },
     { url: "edit-profile", component: <EditProfile /> },
     { url: "post-details", component: <PostDetails /> },
     { url: "email-compose", component: <Compose /> },

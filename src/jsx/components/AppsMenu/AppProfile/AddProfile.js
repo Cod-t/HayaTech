@@ -6,40 +6,36 @@ import PageTitle from '../../../layouts/PageTitle';
 import Profilt from './../../../../images/tab/1.jpg';
 
 const inputBlog = [
-    { label:'Name', value:'', inputName: 'name' },
+    { label:'Name', value:'John' },
     // { label:'Surname', value:'Brahim' },
-    { label:'Age', value:'', inputName: 'age' },
-    // { label:'Skills', value:'HTML,  JavaScript,  PHP' },
+    { label:'Specialty', value:'Developer' },
+    { label:'Skills', value:'HTML,  JavaScript,  PHP' },
 ];
 
-const genderOptions = [
-    { value: 'select', label: 'Select' },
-    { value: '0', label: 'Male' },
-    { value: '1', label: 'Female' },
+const options2 = [
+    { value: '1', label: 'Select' },
+    { value: '2', label: 'Male' },
+    { value: '3', label: 'Female' },
+    { value: '4', label: 'Other' }
 ]
-const raceOptions = [
-    { value: 'select', label: 'Select' },
-    { value: 'white', label: 'White' },
-    { value: 'black', label: 'Black' },
-    { value: 'americanIndianAlaskaNative', label: 'American Indian/Alaska Native' },
-    { value: 'asianOrPacificIslander', label: 'Asian or Pacific Islander' },
+const options3 = [
+    { value: '1', label: 'Russia' },
+    { value: '2', label: 'Canada' },
+    { value: '3', label: 'China' },
+    { value: '4', label: 'India' }
 ]
-const treatmentOptions = [
-    { value: 'select', label: 'Select' },
-    { value: 'adjuv-rad', label: 'adjuv rad' },
-    { value: 'surg-only', label: 'surg only' },
-    { value: 'adjuv-chemo', label: 'adjuv chemo' },
-    { value: 'no-ttt', label: 'no ttt' },
-    { value: 'adjuv-chemoradio', label: 'adjuv chemoradio' },
-    { value: 'prim-radio', label: 'prim radio' },
-    { value: 'prim-radio', label: 'prim radio' },
+const options4 = [
+    { value: '1', label: 'Krasnodar' },
+    { value: '2', label: 'Tyumen' },
+    { value: '3', label: 'Chelyabinsk' },
+    { value: '4', label: 'Moscow' }
 ]
 
-const EditProfile = () => {
+const AddProfile = () => {
    // const [selectOption , setSelectOption] = useState('Gender');
     return(
         <>          
-            <PageTitle activeMenu="Edit Patient" motherMenu="Dashboard" />
+            <PageTitle activeMenu="Add Patient" motherMenu="Dashboard" />
             <div className="row">
                 <div className="col-xl-12 col-lg-12">
                     <div className="card profile-card card-bx mb-3">
@@ -52,30 +48,21 @@ const EditProfile = () => {
                                     { inputBlog.map((item, ind)=>(
                                         <div className="col-sm-6 mb-3" key={ind}>
                                             <label className="form-label">{item.label}</label>
-                                            <input name={item.inputName} type="text" className="form-control" defaultValue={item.value}  />
+                                            <input type="text" className="form-control" defaultValue={item.value}  />
                                         </div>
                                     ))}
+                                
                                     <div className="col-sm-6 mb-3">                                        
                                         <label className="form-label">Gender</label>
-                                        <Select options={genderOptions}  className="custom-react-select" 
-                                            defaultValue={genderOptions[0]}
+                                        <Select options={options2}  className="custom-react-select" 
+                                            defaultValue={options2[0]}
                                             isSearchable={false}
                                         />
                                         
                                     </div>
                                     <div className="col-sm-6 mb-3">
-                                        <label className="form-label">Race</label>
-                                        <Select name='race' options={raceOptions}  className="custom-react-select" 
-                                            defaultValue={raceOptions[0]}
-                                            isSearchable={false}
-                                        />
-                                    </div>
-                                    <div className="col-sm-6 mb-3">
-                                        <label className="form-label">Treatment</label>
-                                        <Select name='race' options={treatmentOptions}  className="custom-react-select" 
-                                            defaultValue={treatmentOptions[0]}
-                                            isSearchable={false}
-                                        />
+                                        <label className="form-label">Birth</label>                                        
+                                        <input class="form-control mb-xl-0 mb-3" type="text" id="datepicker" />
                                     </div>
                                     <div className="col-sm-6 mb-3">
                                         <label className="form-label">Phone</label>
@@ -85,17 +72,24 @@ const EditProfile = () => {
                                         <label className="form-label">Email address</label>
                                         <input type="text" className="form-control" defaultValue="demo@gmail.com" />
                                     </div>
-                                    {/* <div className="col-sm-6 mb-3">
+                                    <div className="col-sm-6 mb-3">
+                                        <label className="form-label">Country</label>
+                                        <Select options={options3}  className="custom-react-select" 
+                                            defaultValue={options3[0]}
+                                            isSearchable={false}
+                                        />
+                                    </div>
+                                    <div className="col-sm-6 mb-3">
                                         <label className="form-label">City</label> 
                                         <Select options={options4}  className="custom-react-select" 
                                             defaultValue={options4[0]}
                                             isSearchable={false}
                                         />
-                                    </div> */}
+                                    </div>
                                 </div>
                             </div>
                             <div className="card-footer card-footer align-items-center d-flex justify-content-between">
-                                <button className="btn btn-primary">Update</button>
+                                <button className="btn btn-primary">Save</button>
                             </div>
                         </form>
                     </div>
@@ -104,4 +98,4 @@ const EditProfile = () => {
         </>
     )
 }
-export default EditProfile;
+export default AddProfile;

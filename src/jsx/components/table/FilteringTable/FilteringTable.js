@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import PageTitle from "../../../layouts/PageTitle";
+import { Link } from "react-router-dom";
 import {
   useTable,
   useGlobalFilter,
@@ -53,7 +54,7 @@ export const FilteringTable = () => {
         <div className="card-header">
           <h4 className="card-title">Patients Information</h4>
           <button type="button" class="me-2 btn btn-primary">
-            Add patient
+            <Link className="text-white" to={'../add-patient'}>Add patient</Link>
           </button>
         </div>
         <div className="card-body">
