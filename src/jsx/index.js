@@ -179,7 +179,7 @@ const Markup = () => {
 
     /// Form
     { url: "form-element", component: <Element /> },
-    { url: "services/predict", component: <Wizard /> },
+    { url: "predict", component: <Wizard /> },
     { url: "form-ckeditor", component: <CkEditor /> },
     { url: "form-pickers", component: <Pickers /> },
     { url: "form-validation", component: <FormValidation /> },

@@ -218,15 +218,15 @@ const SideBar = () => {
             }
           })}
         </ul>
-        <Link>
+        <Link to='add-patient'>
           <div className="plus-box">
-            <p>Create new appointment</p>
+            <p>Add a new patient</p>
           </div>
         </Link>
 
         <div className="copyright">
           <p>
-            <strong>Mediqu Hospital Admin Dashboard</strong> ©{" "}
+            <strong>Codat Medical Services Dashboard</strong> ©{" "}
             {date.getFullYear()} All Rights Reserved
           </p>
           <p>
@@ -235,7 +235,7 @@ const SideBar = () => {
               className={`heart ${heartBtn ? " heart-blast" : ""}`}
               onClick={() => setHeartBtn(!heartBtn)}
             />{" "}
-            by DexignZone
+            by Codat
           </p>
         </div>
       </div>

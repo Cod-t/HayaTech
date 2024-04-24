@@ -340,7 +340,7 @@ const UiCards = () => {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Link to={"predict"} className="btn btn-primary">
+              <Link to={"../predict"} className="btn btn-primary">
                 Predict
               </Link>
             </Card.Footer>

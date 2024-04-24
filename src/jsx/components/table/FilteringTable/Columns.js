@@ -1,7 +1,9 @@
 import { format } from "date-fns";
 import { ColumnFilter } from "./ColumnFilter";
 import { Link } from "react-router-dom";
-import { Row, Col, Card, Button, Dropdown, ButtonGroup } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
+import Swal from "sweetalert2";
+
 const svg1 = (
   <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -77,9 +79,32 @@ export const COLUMNS = [
             <Dropdown.Item>
               <Link to={`../edit-profile?id=${id}`}>Edit</Link>
             </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to={`../services/predict?id=${id}`}>Delete</Link>
-            </Dropdown.Item>
+            <div className="sweetalert">
+              <Dropdown.Item
+                onClick={() =>
+                  Swal.fire({
+                    title: "Are you sure for delete ?",
+                    text: "Once deleted, you will not be able to recover the DATA!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#dd6b55",
+                    cancelButtonColor: "#aaa",
+                    confirmButtonText: "Yes, delete it!",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire(
+                        "Deleted!",
+                        "Your file has been deleted.",
+                        "success"
+                      );
+                    }
+                  })
+                }
+                className="btn btn-warning btn sweet-confirm"
+              >
+                Delete
+              </Dropdown.Item>
+            </div>
           </Dropdown.Menu>
         </Dropdown>
       );

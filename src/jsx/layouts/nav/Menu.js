@@ -45,7 +45,7 @@ export const MenuList = [
         content: [
           {
             title: "Predict",
-            to: "services/predict",
+            to: "predict",
           },
         ],
       },
@@ -55,7 +55,16 @@ export const MenuList = [
     title: "Patients",
     classsChange: "mm-collapse",
     iconStyle: <i className="flaticon-381-user-9" />,
-    to: "patients",
+    content: [
+      {
+        title: "All Patients",
+        to: "patients",
+      },
+      {
+        title: "Add Patients",
+        to: "add-patient",
+      },
+    ],
   },
   //Apps
   // {
