@@ -218,7 +218,7 @@ const SideBar = () => {
             }
           })}
         </ul>
-        <Link to={}>
+        <Link>
           <div className="plus-box">
             <p>Create new appointment</p>
           </div>
