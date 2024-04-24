@@ -2,7 +2,16 @@ import { format } from "date-fns";
 import { ColumnFilter } from "./ColumnFilter";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Button, Dropdown, ButtonGroup } from "react-bootstrap";
-
+const svg1 = (
+  <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <rect x="0" y="0" width="24" height="24"></rect>
+      <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+      <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+      <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+    </g>
+  </svg>
+);
 export const COLUMNS = [
   {
     Header: "Id",
@@ -57,24 +66,22 @@ export const COLUMNS = [
     Cell: ({ row }) => {
       const { id } = row.original;
       return (
-        <ButtonGroup>
-          <Dropdown>
-            <Dropdown.Toggle className="me-2" variant="success">
-              Actions
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>
-                <Link to={`../services/predict?id=${id}`}>Predict</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to={`../edit-profile?id=${id}`}>Edit</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to={`../services/predict?id=${id}`}>Delete</Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </ButtonGroup>
+        <Dropdown>
+          <Dropdown.Toggle variant="success" className="light sharp i-false">
+            {svg1}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item>
+              <Link to={`../services/predict?id=${id}`}>Predict</Link>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to={`../edit-profile?id=${id}`}>Edit</Link>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to={`../services/predict?id=${id}`}>Delete</Link>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       );
     },
     disableFilters: true,

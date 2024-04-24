@@ -4,7 +4,7 @@ export const MenuList = [
     title: "Dashboard",
     classsChange: "mm-collapse",
     iconStyle: <i className="flaticon-381-networking" />,
-    to: "dashboard",
+    to: "",
     // content: [
     //     {
     //         title: 'Dashboard Light',
