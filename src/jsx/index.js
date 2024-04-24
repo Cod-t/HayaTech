@@ -113,7 +113,7 @@ const Markup = () => {
   const allroutes = [
     /// Deshborad
     { url: "", component: <Home /> },
-    { url: "dashboard", component: <Home /> },
+    // { url: "dashboard", component: <Home /> },
     { url: "index-2", component: <DashboardDark /> },
     { url: "doctors", component: <Doctors /> },
     { url: "doctors-details", component: <DoctorsDetails /> },

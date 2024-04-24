@@ -180,128 +180,7 @@ const Header = ({ onNote }) => {
                   </Link>
                 </li>
               )}
-              <li className="nav-item dropdown notification_dropdown">
-                <Link
-                  className="nav-link bell bell-link"
-                  to="#"
-                  onClick={() => onNote()}
-                >
-                  <div className="">
-                    <i className="flaticon-381-pad"></i>
-                  </div>
-                 
-                </Link>
-              </li>
               
-              <li className="nav-item dropdown notification_dropdown">
-                <Dropdown className="no-carat transparrent">
-                  <Dropdown.Toggle
-                    variant=""
-                    id="dropdown-basic"
-                    className="nav-link  ai-icon i-false"
-                  >
-                    <div className="">
-                      <i className="flaticon-381-ring"></i>
-                      <div className="pulse-css"></div>
-                    </div>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-right" align="end">
-                    <div className="deznav-scroll">
-                      <div
-                        id="DZ_W_Notification1"
-                        className="widget-media dz-scroll p-3"
-                        style={{ height: "380px" }}
-                      >
-                        <ul className="timeline">
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2">
-                                <img src={avatar} width={50} alt />
-                              </div>
-                              <div className="media-body">
-                                <h6 className="mb-1">
-                                  Dr sultadsss Send you Photo
-                                </h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2 media-info">KG</div>
-                              <div className="media-body">
-                                <h6 className="mb-1">
-                                  Resport created successfully
-                                </h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2 media-success">
-                                <i className="fa fa-home"></i>
-                              </div>
-                              <div className="media-body">
-                                <h6 className="mb-1">Reminder : Treatment Time!</h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2">
-                                <img src={avatar} width={50} alt />
-                              </div>
-                              <div className="media-body">
-                                <h6 className="mb-1">Dr sultads Send you Photo</h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2 media-danger">KG</div>
-                              <div className="media-body">
-                                <h6 className="mb-1">
-                                  Resport created successfully
-                                </h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="timeline-panel">
-                              <div className="media me-2 media-primary">
-                                <i className="fa fa-home"></i>
-                              </div>
-                              <div className="media-body">
-                                <h6 className="mb-1">Reminder : Treatment Time!</h6>
-                                <small className="d-block">
-                                  29 July 2023 - 02:26 PM
-                                </small>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <Link className="all-notification" to={"#"}>
-                      See all notifications <i className="ti-arrow-right"></i>
-                    </Link>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </li>
               <Dropdown as="li" className="nav-item dropdown header-profile">
                 <Dropdown.Toggle
                   as={Link}
@@ -319,7 +198,7 @@ const Header = ({ onNote }) => {
                   align="end"
                   className="dropdown-menu dropdown-menu-right"
                 >
-                  <Link to="/app-profile" className="dropdown-item ai-icon">
+                  {/* <Link to="/app-profile" className="dropdown-item ai-icon">
                     <svg
                       id="icon-user1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -356,7 +235,7 @@ const Header = ({ onNote }) => {
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
                     <span className="ms-2">Inbox </span>
-                  </Link>
+                  </Link> */}
                   <Link to="/page-login" className="dropdown-item ai-icon">
                     <svg
                       id="icon-logout"
