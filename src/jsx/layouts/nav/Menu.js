@@ -37,7 +37,19 @@ export const MenuList = [
     title: "Services",
     classsChange: "mm-collapse",
     iconStyle: <i className="flaticon-381-heart" />,
-    to: "services",
+    content: [
+      {
+        title: "All Services",
+        to: "services",
+        hasMenu: true,
+        content: [
+          {
+            title: "Predict",
+            to: "services/predict",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Patients",
