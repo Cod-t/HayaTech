@@ -343,7 +343,7 @@ const AddProfile = () => {
                 </div>
               </div>
               <div className="card-footer card-footer align-items-center d-flex justify-content-between">
-                <button className="btn btn-primary">Update</button>
+                <button className="btn btn-primary">Add patinet</button>
               </div>
             </form>
           </div>

@@ -39,15 +39,8 @@ export const MenuList = [
     iconStyle: <i className="flaticon-381-heart" />,
     content: [
       {
-        title: "All Services",
-        to: "services",
-        hasMenu: true,
-        content: [
-          {
-            title: "Predict",
-            to: "predict",
-          },
-        ],
+        title: "Predict",
+        to: "predict",
       },
     ],
   },

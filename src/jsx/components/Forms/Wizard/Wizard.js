@@ -59,7 +59,6 @@ const Wizard = () => {
 									<StepFour />
 									<div className="text-end toolbar toolbar-bottom p-2">
 										<button  className="btn btn-secondary sw-btn-prev me-1" onClick={() => setGoSteps(2)}>Prev</button>
-										<button className="btn btn-primary sw-btn-next ms-1"  onClick={() => setGoSteps(4)}>Submit</button>
 									</div>	
 								</>	
 							)}
