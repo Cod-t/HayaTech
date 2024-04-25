@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 /// Image
 // import profile from "../../../images/profile/17.jpg";  
 import profile2 from "../../../images/profile/pic1.jpg";
+import KAUH from "../../../images/KAUH.jpg";
 import avatar from "../../../images/avatar/1.jpg";
 import { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
@@ -189,10 +190,10 @@ const Header = ({ onNote }) => {
                   to="#"                  
                 >
                   <div className="header-info">
-                    <span>David Morse</span>
+                    <span>KAUH</span>
                     <small>ADMIN</small>
                   </div>
-                  <img src={profile2} width={20} alt="" />
+                  <img src={KAUH} width={20} alt="" />
                 </Dropdown.Toggle>
                 <Dropdown.Menu
                   align="end"

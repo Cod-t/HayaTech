@@ -10,7 +10,7 @@ const StepTwo = () => {
             <div className="col-lg-6 mb-2">
                <div className="form-group mb-3">
                <label className="form-label">Treatment</label>
-                    <Select
+                    <Select required
                       name="treatment"
                       options={selectOptions.treatmentOptions}
                       className="custom-react-select"

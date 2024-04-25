@@ -1,8 +1,8 @@
 {
     "genderOptions": [
       { "value": "select", "label": "Select" },
-      { "value": "0", "label": "Male" },
-      { "value": "1", "label": "Female" }
+      { "value": "male", "label": "Male" },
+      { "value": "female", "label": "Female" }
     ],
     "raceOptions": [
       { "value": "select", "label": "Select" },

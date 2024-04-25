@@ -10,7 +10,6 @@ const JobieNav = ({ title }) => {
   return (
     <Fragment>
       <NavHader />
-      <ChatBox onClick={() => onClick("chatbox")} toggle={toggle} />
       <Header
         onNote={() => onClick("chatbox")}
         onNotification={() => onClick("notification")}
