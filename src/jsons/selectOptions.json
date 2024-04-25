@@ -1,0 +1,25 @@
+{
+    "genderOptions": [
+      { "value": "select", "label": "Select" },
+      { "value": "0", "label": "Male" },
+      { "value": "1", "label": "Female" }
+    ],
+    "raceOptions": [
+      { "value": "select", "label": "Select" },
+      { "value": "white", "label": "White" },
+      { "value": "black", "label": "Black" },
+      { "value": "americanIndianAlaskaNative", "label": "American Indian/Alaska Native" },
+      { "value": "asianOrPacificIslander", "label": "Asian or Pacific Islander" }
+    ],
+    "treatmentOptions": [
+      { "value": "select", "label": "Select" },
+      { "value": "adjuv-rad", "label": "adjuv rad" },
+      { "value": "surg-only", "label": "surg only" },
+      { "value": "adjuv-chemo", "label": "adjuv chemo" },
+      { "value": "no-ttt", "label": "no ttt" },
+      { "value": "adjuv-chemoradio", "label": "adjuv chemoradio" },
+      { "value": "prim-radio", "label": "prim radio" },
+      { "value": "prim-chemo", "label": "prim chemo" },
+      { "value": "prim-chemoradio", "label": "prim chemoradio" }
+    ]
+}

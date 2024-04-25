@@ -1,4 +1,7 @@
 import React from "react";
+import Select from "react-select";
+import selectOptions from '../../../../jsons/selectOptions.json';
+
 
 const StepTwo = () => {
    return (
@@ -6,51 +9,26 @@ const StepTwo = () => {
          <div className="row">
             <div className="col-lg-6 mb-2">
                <div className="form-group mb-3">
-                  <label className="text-label">Company Name <span className="required">*</span></label>
-                  <input
-                     type="text"
-                     name="firstName"
-                     className="form-control"
-                     placeholder="Cellophane Square"
-                     required
-                  />
+               <label className="form-label">Treatment</label>
+                    <Select
+                      name="treatment"
+                      options={selectOptions.treatmentOptions}
+                      className="custom-react-select"
+                      defaultValue={selectOptions.treatmentOptions[0]}
+                      isSearchable={false}
+                    />
                </div>
             </div>
             <div className="col-lg-6 mb-2">
                <div className="form-group mb-3">
-                  <label className="text-label">Company Email Address <span className="required">*</span></label>
-                  <input
-                     type="email"
-                     className="form-control"
-                     id="emial1"
-                     placeholder="example@example.com.com"
-                     required
-                  />
-               </div>
-            </div>
-            <div className="col-lg-6 mb-2">
-               <div className="form-group mb-3">
-                  <label className="text-label">Company Phone Number <span className="required">*</span></label>
-                  <input
-                     type="number"
-                     name="phoneNumber"
-                     className="form-control"
-                     placeholder="(+1)408-657-9007"
-                     required
-                  />
-               </div>
-            </div>
-            <div className="col-lg-6 mb-2">
-               <div className="form-group mb-3">
-                  <label className="text-label">
-                     Your position in Company*
-                  </label>
-                  <input
-                     type="text"
-                     name="place"
-                     className="form-control"
-                     required
-                  />
+               <label className="form-label">
+                      Year of follow up record
+                    </label>
+                    <input
+                      name="yearOfFollowUpRecord"
+                      type="number"
+                      className="form-control"
+                    />
                </div>
             </div>
          </div>

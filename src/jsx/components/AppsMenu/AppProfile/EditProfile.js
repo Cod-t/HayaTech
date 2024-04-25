@@ -4,6 +4,7 @@ import Select from "react-select";
 import PageTitle from "../../../layouts/PageTitle";
 
 import Profilt from "./../../../../images/tab/1.jpg";
+import selectOptions from '../../../../jsons/selectOptions.json';
 
 const inputBlog = [
   { label: "Name", value: "", inputName: "name" },
@@ -12,32 +13,7 @@ const inputBlog = [
   // { label:'Skills', value:'HTML,  JavaScript,  PHP' },
 ];
 
-const genderOptions = [
-  { value: "select", label: "Select" },
-  { value: "0", label: "Male" },
-  { value: "1", label: "Female" },
-];
-const raceOptions = [
-  { value: "select", label: "Select" },
-  { value: "white", label: "White" },
-  { value: "black", label: "Black" },
-  {
-    value: "americanIndianAlaskaNative",
-    label: "American Indian/Alaska Native",
-  },
-  { value: "asianOrPacificIslander", label: "Asian or Pacific Islander" },
-];
-const treatmentOptions = [
-  { value: "select", label: "Select" },
-  { value: "adjuv-rad", label: "adjuv rad" },
-  { value: "surg-only", label: "surg only" },
-  { value: "adjuv-chemo", label: "adjuv chemo" },
-  { value: "no-ttt", label: "no ttt" },
-  { value: "adjuv-chemoradio", label: "adjuv chemoradio" },
-  { value: "prim-radio", label: "prim radio" },
-  { value: "prim-chemo", label: "prim chemo" },
-  { value: "prim-chemoradio", label: "prim chemoradio" },
-];
+
 
 const EditProfile = () => {
   // const [selectOption , setSelectOption] = useState('Gender');
@@ -67,9 +43,10 @@ const EditProfile = () => {
                   <div className="col-sm-6 mb-3">
                     <label className="form-label">Gender</label>
                     <Select
-                      options={genderOptions}
+                    name="gender"
+                      options={selectOptions.genderOptions}
                       className="custom-react-select"
-                      defaultValue={genderOptions[0]}
+                      defaultValue={selectOptions.genderOptions[0]}
                       isSearchable={false}
                     />
                   </div>
@@ -77,9 +54,9 @@ const EditProfile = () => {
                     <label className="form-label">Race</label>
                     <Select
                       name="race"
-                      options={raceOptions}
+                      options={selectOptions.raceOptions}
                       className="custom-react-select"
-                      defaultValue={raceOptions[0]}
+                      defaultValue={selectOptions.raceOptions[0]}
                       isSearchable={false}
                     />
                   </div>
@@ -87,10 +64,10 @@ const EditProfile = () => {
                   <div className="col-sm-6 mb-3">
                     <label className="form-label">Treatment</label>
                     <Select
-                      name="race"
-                      options={treatmentOptions}
+                      name="treatment"
+                      options={selectOptions.treatmentOptions}
                       className="custom-react-select"
-                      defaultValue={treatmentOptions[0]}
+                      defaultValue={selectOptions.treatmentOptions[0]}
                       isSearchable={false}
                     />
                   </div>

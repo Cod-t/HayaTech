@@ -74,7 +74,7 @@ export const COLUMNS = [
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item>
-              <Link to={`../services/predict?id=${id}`}>Predict</Link>
+              <Link to={`../predict?id=${id}`}>Predict</Link>
             </Dropdown.Item>
             <Dropdown.Item>
               <Link to={`../edit-profile?id=${id}`}>Edit</Link>
