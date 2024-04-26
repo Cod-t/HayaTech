@@ -1,1 +1,106 @@
-[{"id":105,"first_name":"Zaccaria","last_name":"Oda","email":"zoda2w@webeden.co.uk","date_of_birth":"1983-04-21T08:03:16Z","age":53,"country":"Russia","phone":"2888937859"}]
+[
+    {
+        "id": 1,
+        "name": "Zaccaria",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 2,
+        "name": "aaccaria",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 3,
+        "name": "baccaria",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 4,
+        "name": "caccaria",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 5,
+        "name": "taccaria",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 6,
+        "name": "kjfgdgd",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 7,
+        "name": "John Doe",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 8,
+        "name": "Ali",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 9,
+        "name": "mohammed",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 10,
+        "name": "Mahmoud",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 11,
+        "name": "Mahmoud",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 12,
+        "name": "Mahmoud",
+        "age": 40,
+        "gender": "Male",
+        "race": "White",
+        "status": "Predicted"
+    },
+    {
+        "id": 13,
+        "name": "Mahmoud",
+        "age": 40,
+        "gender": "Male",
+        "race": "Black",
+        "status": "Predicted"
+    }
+]

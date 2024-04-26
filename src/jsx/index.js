@@ -53,7 +53,7 @@ import UiButton from "./components/bootstrap/Button";
 import UiModal from "./components/bootstrap/Modal";
 import UiButtonGroup from "./components/bootstrap/ButtonGroup";
 import UiListGroup from "./components/bootstrap/ListGroup";
-import UiCards from "./components/bootstrap/Cards";
+import Services from "./components/bootstrap/Services.js";
 import UiCarousel from "./components/bootstrap/Carousel";
 import UiDropDown from "./components/bootstrap/DropDown";
 import UiPopOver from "./components/bootstrap/PopOver";
@@ -89,7 +89,7 @@ import ApexChart from "./components/charts/apexcharts-old";
 
 /// Table
 import SortingTable from "./components/table/SortingTable/SortingTable";
-import FilteringTable from "./components/table/FilteringTable/FilteringTable";
+import PatientsTable from "./components/table/FilteringTable/PatientsTable.js";
 import DataTable from "./components/table/DataTable";
 import BootstrapTable from "./components/table/BootstrapTable";
 
@@ -108,6 +108,7 @@ import Lightgallery from "./components/PluginsMenu/Lightgallery/Lightgallery";
 
 import { ThemeContext } from "../context/ThemeContext";
 import AddProfile from "./components/AppsMenu/AppProfile/AddProfile.js";
+import HistoryTable from "./components/table/FilteringTable/HistoryTable.js";
 
 const Markup = () => {
   const allroutes = [
@@ -155,7 +156,7 @@ const Markup = () => {
     { url: "ui-button-group", component: <UiButtonGroup /> },
     { url: "ui-accordion", component: <UiAccordion /> },
     { url: "ui-list-group", component: <UiListGroup /> },
-    { url: "services", component: <UiCards /> },
+    { url: "services", component: <Services /> },
     { url: "ui-carousel", component: <UiCarousel /> },
     { url: "ui-dropdown", component: <UiDropDown /> },
     { url: "ui-popover", component: <UiPopOver /> },
@@ -172,7 +173,8 @@ const Markup = () => {
     { url: "chart-rechart", component: <RechartJs /> },
 
     /// table
-    { url: "patients", component: <FilteringTable /> },
+    { url: "patients", component: <PatientsTable /> },
+    { url: "/history", component: <HistoryTable /> },
     { url: "table-sorting", component: <SortingTable /> },
     { url: "table-datatable-basic", component: <DataTable /> },
     { url: "table-bootstrap-basic", component: <BootstrapTable /> },
