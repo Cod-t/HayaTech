@@ -6,6 +6,7 @@ import {store} from './store/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ThemeContext from "./context/ThemeContext";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
         <BrowserRouter basename='/'>
           <ThemeContext>
             <App />
+            <ToastContainer/>
           </ThemeContext>
         </BrowserRouter>
       </Provider>

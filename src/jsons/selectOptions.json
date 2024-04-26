@@ -1,11 +1,9 @@
 {
   "genderOptions": [
-    { "value": "select", "label": "Select" },
     { "value": "male", "label": "Male" },
     { "value": "female", "label": "Female" }
   ],
   "raceOptions": [
-    { "value": "select", "label": "Select" },
     { "value": "white", "label": "White" },
     { "value": "black", "label": "Black" },
     {
@@ -13,17 +11,6 @@
       "label": "American Indian/Alaska Native"
     },
     { "value": "asianOrPacificIslander", "label": "Asian or Pacific Islander" }
-  ],
-  "treatmentOptions": [
-    { "value": "select", "label": "Select" },
-    { "value": "adjuv-rad", "label": "adjuv rad" },
-    { "value": "surg-only", "label": "surg only" },
-    { "value": "adjuv-chemo", "label": "adjuv chemo" },
-    { "value": "no-ttt", "label": "no ttt" },
-    { "value": "adjuv-chemoradio", "label": "adjuv chemoradio" },
-    { "value": "prim-radio", "label": "prim radio" },
-    { "value": "prim-chemo", "label": "prim chemo" },
-    { "value": "prim-chemoradio", "label": "prim chemoradio" }
   ],
   "cancerOptions": [
     { "label": "Breast", "value": "breast" },
@@ -40,5 +27,15 @@
     { "label": "Skin", "value": "skin" },
     { "label": "Unspecified", "value": "unspecified" },
     { "label": "Urinary", "value": "urinary" }
+  ],
+  "treatmentOptions": [
+    { "value": "adjuv-rad", "label": "adjuv rad" },
+    { "value": "surg-only", "label": "surg only" },
+    { "value": "adjuv-chemo", "label": "adjuv chemo" },
+    { "value": "no-ttt", "label": "no ttt" },
+    { "value": "adjuv-chemoradio", "label": "adjuv chemoradio" },
+    { "value": "prim-radio", "label": "prim radio" },
+    { "value": "prim-chemo", "label": "prim chemo" },
+    { "value": "prim-chemoradio", "label": "prim chemoradio" }
   ]
 }

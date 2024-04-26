@@ -31,9 +31,6 @@ export const COLUMNS = [
     Header: "Age",
     Footer: "Age",
     accessor: "age",
-    Header: "Age",
-    Footer: "Age",
-    accessor: "age",
     Filter: ColumnFilter,
   },
   {

@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import PageTitle from "../../../layouts/PageTitle";
 import selectOptions from "../../../../jsons/selectOptions.json";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddProfile = () => {
+  const navigate = useNavigate()
   // const [selectOption , setSelectOption] = useState('Gender');
   const [formData, setFormData] = useState({
     name: "",
     sex: "",
+    treatment: "",
     year_of_diagnosis: null,
     race_recode_W_B_AI_API: "",
-    treatment: "",
     year_of_follow_up_recode: null,
     breast: false,
     endocrine: false,
@@ -28,7 +32,6 @@ const AddProfile = () => {
     urinary: false,
     age: null,
   });
-
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     if (
@@ -61,21 +64,26 @@ const AddProfile = () => {
   const addPatient = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:5000/patients", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const res = await axios.post(`http://127.0.0.1:5000/patients`, formData);
+      toast.success("Patient added successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
       });
-      if (response.ok) {
-        // Optionally handle success case
-        console.log("Patient added successfully");
-      } else {
-        console.error("Failed to add patient:", response.statusText);
-      }
+      navigate('/patients')
     } catch (error) {
-      console.error("Error adding patient:", error);
+      toast.error("Error added patient", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
   return (
@@ -125,7 +133,7 @@ const AddProfile = () => {
                     <Select
                       options={selectOptions.genderOptions}
                       className="custom-react-select"
-                      value={formData.gender}
+                      defaultValue={formData.gender}
                       onChange={(selectedOption) =>
                         handleSelectChange(selectedOption, "sex")
                       }
@@ -139,7 +147,7 @@ const AddProfile = () => {
                     <Select
                       options={selectOptions.raceOptions}
                       className="custom-react-select"
-                      value={formData.race}
+                      defaultValue={formData.race}
                       onChange={(selectedOption) =>
                         handleSelectChange(
                           selectedOption,
@@ -156,7 +164,7 @@ const AddProfile = () => {
                     <Select
                       options={selectOptions.treatmentOptions}
                       className="custom-react-select"
-                      value={formData.treatment}
+                      defaultValue={formData.treatment}
                       onChange={(selectedOption) =>
                         handleSelectChange(selectedOption, "treatment")
                       }
