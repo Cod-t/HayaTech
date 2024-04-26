@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 /// Compoents
 import PageTitle from "../../layouts/PageTitle";
 
@@ -14,7 +14,11 @@ import { Row, Card, Col, Button, Nav } from "react-bootstrap";
 const UiCards = () => {
   return (
     <Fragment>
-      <PageTitle activeMenu="Services" pageContent="Services" motherMenu="Home" />
+      <PageTitle
+        activeMenu="Services"
+        pageContent="Services"
+        motherMenu="Home"
+      />
       <Row>
         <Col xl="6">
           <Card className="">
@@ -24,12 +28,15 @@ const UiCards = () => {
               alt="Card cap"
             />
             <Card.Header>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>
+                Predict The Stroke Mortality Of A Cancer Patient
+              </Card.Title>
             </Card.Header>
             <Card.Body>
               <Card.Text>
-                He lay on his armour-like back, and if he lifted his head a
-                little
+                As a healthcare provider, you can forecast the risk of
+                stroke-related mortality in cancer patients to inform and
+                customize their treatment strategies effectively.
               </Card.Text>
             </Card.Body>
             <Card.Footer>

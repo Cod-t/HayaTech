@@ -13,7 +13,7 @@ import { GlobalFilter } from "./GlobalFilter";
 //import './table.css';
 import "./filtering.css";
 
-export const FilteringTable = () => {
+export const HistoryTable = () => {
   // Get api data here instead of MOCK_DATA var
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
@@ -49,12 +49,12 @@ export const FilteringTable = () => {
 
   return (
     <>
-      <PageTitle activeMenu="Patients" motherMenu="Home" />
+      <PageTitle activeMenu="History" motherMenu="Home" />
       <div className="card">
         <div className="card-header">
-          <h4 className="card-title">Patients Information</h4>
+          <h4 className="card-title">Predictions History</h4>
           <button type="button" class="me-2 btn btn-primary">
-            <Link className="text-white" to={'../add-patient'}>Add patient</Link>
+            <Link className="text-white" to={'../predict'}>Predict</Link>
           </button>
         </div>
         <div className="card-body">
@@ -153,4 +153,4 @@ export const FilteringTable = () => {
     </>
   );
 };
-export default FilteringTable;
+export default HistoryTable;
