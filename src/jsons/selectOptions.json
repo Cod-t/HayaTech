@@ -1,25 +1,44 @@
 {
-    "genderOptions": [
-      { "value": "select", "label": "Select" },
-      { "value": "male", "label": "Male" },
-      { "value": "female", "label": "Female" }
-    ],
-    "raceOptions": [
-      { "value": "select", "label": "Select" },
-      { "value": "white", "label": "White" },
-      { "value": "black", "label": "Black" },
-      { "value": "americanIndianAlaskaNative", "label": "American Indian/Alaska Native" },
-      { "value": "asianOrPacificIslander", "label": "Asian or Pacific Islander" }
-    ],
-    "treatmentOptions": [
-      { "value": "select", "label": "Select" },
-      { "value": "adjuv-rad", "label": "adjuv rad" },
-      { "value": "surg-only", "label": "surg only" },
-      { "value": "adjuv-chemo", "label": "adjuv chemo" },
-      { "value": "no-ttt", "label": "no ttt" },
-      { "value": "adjuv-chemoradio", "label": "adjuv chemoradio" },
-      { "value": "prim-radio", "label": "prim radio" },
-      { "value": "prim-chemo", "label": "prim chemo" },
-      { "value": "prim-chemoradio", "label": "prim chemoradio" }
-    ]
+  "genderOptions": [
+    { "value": "select", "label": "Select" },
+    { "value": "male", "label": "Male" },
+    { "value": "female", "label": "Female" }
+  ],
+  "raceOptions": [
+    { "value": "select", "label": "Select" },
+    { "value": "white", "label": "White" },
+    { "value": "black", "label": "Black" },
+    {
+      "value": "americanIndianAlaskaNative",
+      "label": "American Indian/Alaska Native"
+    },
+    { "value": "asianOrPacificIslander", "label": "Asian or Pacific Islander" }
+  ],
+  "treatmentOptions": [
+    { "value": "select", "label": "Select" },
+    { "value": "adjuv-rad", "label": "adjuv rad" },
+    { "value": "surg-only", "label": "surg only" },
+    { "value": "adjuv-chemo", "label": "adjuv chemo" },
+    { "value": "no-ttt", "label": "no ttt" },
+    { "value": "adjuv-chemoradio", "label": "adjuv chemoradio" },
+    { "value": "prim-radio", "label": "prim radio" },
+    { "value": "prim-chemo", "label": "prim chemo" },
+    { "value": "prim-chemoradio", "label": "prim chemoradio" }
+  ],
+  "cancerOptions": [
+    { "label": "Breast", "value": "breast" },
+    { "label": "Endocrine", "value": "endocrine" },
+    { "label": "Eye and adnexa", "value": "eye_and_adnexa" },
+    { "label": "Gastrointestinal", "value": "gastrointestinal" },
+    { "label": "Gynecological", "value": "gynecological" },
+    { "label": "Head_and_Neck", "value": "head_and_neck" },
+    { "label": "Hematopoietic", "value": "hematopoietic" },
+    { "label": "Male_Genital", "value": "male_genital" },
+    { "label": "Musculoskeletal", "value": "musculoskeletal" },
+    { "label": "Nervous_System", "value": "nervous_system" },
+    { "label": "Respiratory", "value": "respiratory" },
+    { "label": "Skin", "value": "skin" },
+    { "label": "Unspecified", "value": "unspecified" },
+    { "label": "Urinary", "value": "urinary" }
+  ]
 }

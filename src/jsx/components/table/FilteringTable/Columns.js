@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { ColumnFilter } from "./ColumnFilter";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
@@ -23,42 +22,27 @@ export const COLUMNS = [
     //disableFilters: true,
   },
   {
-    Header: "First Name",
-    Footer: "First Name",
-    accessor: "first_name",
+    Header: "Name",
+    Footer: "Name",
+    accessor: "name",
     Filter: ColumnFilter,
   },
   {
-    Header: "Last Name",
-    Footer: "Last Name",
-    accessor: "last_name",
+    Header: "Age",
+    Footer: "Age",
+    accessor: "age",
     Filter: ColumnFilter,
   },
   {
-    Header: "Email Id",
-    Footer: "Email Id",
-    accessor: "email",
+    Header: "Gender",
+    Footer: "Gender",
+    accessor: "sex",
     Filter: ColumnFilter,
   },
   {
-    Header: "Date of  Birth",
-    Footer: "Date of  Birth",
-    accessor: "date_of_birth",
-    Cell: ({ value }) => {
-      return format(new Date(value), "dd/mm/yyyy");
-    },
-    Filter: ColumnFilter,
-  },
-  {
-    Header: "Country",
-    Footer: "Country",
-    accessor: "country",
-    Filter: ColumnFilter,
-  },
-  {
-    Header: "Phone",
-    Footer: "Phone",
-    accessor: "phone",
+    Header: "Race",
+    Footer: "Race",
+    accessor: "race_recode_W_B_AI_API",
     Filter: ColumnFilter,
   },
   {
