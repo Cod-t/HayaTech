@@ -2,6 +2,7 @@ import { ColumnFilter } from "./ColumnFilter";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const svg1 = (
   <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
@@ -51,6 +52,35 @@ export const COLUMNS = [
     accessor: "action",
     Cell: ({ row }) => {
       const { id } = row.original;
+      const handleDelete = () => {
+        axios
+          .delete(`http://127.0.0.1:5000/patient/${id}`)
+          .then(() => {
+            Swal.fire({
+              title: "Are you sure for delete ?",
+              text: "Once deleted, you will not be able to recover the DATA!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#dd6b55",
+              cancelButtonColor: "#aaa",
+              confirmButtonText: "Yes, delete it!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                window.location.reload();
+              }
+            });
+          })
+          .catch((error) => {
+            console.error("Error deleting patient:", error);
+            Swal.fire(
+              "Error!",
+              "An error occurred while deleting the patient.",
+              "error"
+            );
+          });
+      };
+
       return (
         <Dropdown>
           <Dropdown.Toggle variant="success" className="light sharp i-false">
@@ -65,25 +95,7 @@ export const COLUMNS = [
             </Dropdown.Item>
             <div className="sweetalert">
               <Dropdown.Item
-                onClick={() =>
-                  Swal.fire({
-                    title: "Are you sure for delete ?",
-                    text: "Once deleted, you will not be able to recover the DATA!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#dd6b55",
-                    cancelButtonColor: "#aaa",
-                    confirmButtonText: "Yes, delete it!",
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      Swal.fire(
-                        "Deleted!",
-                        "Your file has been deleted.",
-                        "success"
-                      );
-                    }
-                  })
-                }
+                onClick={handleDelete}
                 className="btn btn-warning btn sweet-confirm"
               >
                 Delete
