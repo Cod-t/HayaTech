@@ -1,24 +1,7 @@
-import React, {useState} from "react";
 import Select from "react-select";
 import selectOptions from "../../../../jsons/selectOptions.json";
 
-const StepTwo = ({ formData, setFormData }) => {
-  const [treatment, setTreatment] = useState(
-    formData.treatment || selectOptions.treatmentOptions[0]
-  );
-  const [yearOfFollowUpRecord, setYearOfFollowUpRecord] = useState(
-    formData.yearOfFollowUpRecord || ""
-  );
-
-  const handleTreatmentChange = (selectedOption) => {
-    setTreatment(selectedOption);
-    setFormData({ ...formData, treatment: selectedOption });
-  };
-
-  const handleYearOfFollowUpRecordChange = (e) => {
-    setYearOfFollowUpRecord(e.target.value);
-    setFormData({ ...formData, yearOfFollowUpRecord: e.target.value });
-  };
+const StepTwo = (props) => {
   return (
     <section>
       <div className="row">
@@ -29,10 +12,10 @@ const StepTwo = ({ formData, setFormData }) => {
               name="treatment"
               options={selectOptions.treatmentOptions}
               className="custom-react-select"
-              defaultValue={selectOptions.treatmentOptions[0]}
               isSearchable={false}
-              value={treatment}
-              onChange={handleTreatmentChange}
+              onChange={(selectedOption) =>
+                props.handleSelectChange(selectedOption, "treatment")
+              }
             />
           </div>
         </div>
@@ -40,11 +23,23 @@ const StepTwo = ({ formData, setFormData }) => {
           <div className="form-group mb-3">
             <label className="form-label">Year of follow up record</label>
             <input
-              name="yearOfFollowUpRecord"
+              name="year_of_follow_up_recode"
               type="number"
               className="form-control"
-              value={yearOfFollowUpRecord}
-              onChange={handleYearOfFollowUpRecordChange}
+              value={props.formData["year_of_follow_up_recode"]}
+              onChange={props.handleInputChange}
+            />
+          </div>
+        </div>
+        <div className="col-lg-6 mb-2">
+          <div className="form-group mb-3">
+            <label className="form-label">year of diagnosis</label>
+            <input
+              name="year_of_diagnosis"
+              type="number"
+              className="form-control"
+              value={props.formData["year_of_diagnosis"]}
+              onChange={props.handleInputChange}
             />
           </div>
         </div>

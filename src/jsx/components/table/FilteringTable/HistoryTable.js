@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import PageTitle from "../../../layouts/PageTitle";
 import { Link } from "react-router-dom";
 import {
@@ -7,16 +7,32 @@ import {
   useFilters,
   usePagination,
 } from "react-table";
-import MOCK_DATA from "./MOCK_DATA_2.json";
-import { COLUMNS } from "./Columns";
+import { HISTOYCOLUMNS } from "./Columns";
 import { GlobalFilter } from "./GlobalFilter";
 //import './table.css';
 import "./filtering.css";
+import axios from "axios";
 
 export const HistoryTable = () => {
-  // Get api data here instead of MOCK_DATA var
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => MOCK_DATA, []);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:5000/patients");
+        const jsonData = response.data;
+        setData(jsonData.patients);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const columns = useMemo(() => HISTOYCOLUMNS, []);
   const tableInstance = useTable(
     {
       columns,
@@ -46,6 +62,9 @@ export const HistoryTable = () => {
   } = tableInstance;
 
   const { globalFilter, pageIndex } = state;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -54,7 +73,9 @@ export const HistoryTable = () => {
         <div className="card-header">
           <h4 className="card-title">Predictions History</h4>
           <button type="button" class="me-2 btn btn-primary">
-            <Link className="text-white" to={'../predict'}>Predict</Link>
+            <Link className="text-white" to={"../predict"}>
+              Predict
+            </Link>
           </button>
         </div>
         <div className="card-body">

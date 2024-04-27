@@ -67,7 +67,7 @@ export const MenuList = [
     title: "History",
     classsChange: "mm-collapse",
     iconStyle: <i className="flaticon-381-bookmark" />,
-    to: "/history",
+    to: "history",
   },
   //Apps
   // {

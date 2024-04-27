@@ -1,6 +1,6 @@
 import { ColumnFilter } from "./ColumnFilter";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 import Swal from "sweetalert2";
 import axios from "axios";
 
@@ -103,6 +103,43 @@ export const COLUMNS = [
             </div>
           </Dropdown.Menu>
         </Dropdown>
+      );
+    },
+    disableFilters: true,
+  },
+];
+export const HISTOYCOLUMNS = [
+  {
+    Header: "Id",
+    Footer: "Id",
+    accessor: "id",
+    Filter: ColumnFilter,
+    //disableFilters: true,
+  },
+  {
+    Header: "Name",
+    Footer: "Name",
+    accessor: "name",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Gender",
+    Footer: "Gender",
+    accessor: "sex",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Action",
+    Footer: "Action",
+    accessor: "action",
+    Cell: ({ row }) => {
+      const { id } = row.original;
+      return (
+        <Link to={`../patientHistorys?id=${id}`}>
+          <Button className="me-2" variant="primary">
+            View History
+          </Button>
+        </Link>
       );
     },
     disableFilters: true,

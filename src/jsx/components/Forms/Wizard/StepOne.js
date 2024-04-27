@@ -1,37 +1,7 @@
-import React, { useState } from "react";
 import Select from "react-select";
 import selectOptions from "../../../../jsons/selectOptions.json";
 
-const StepOne = ({ formData, setFormData }) => {
-  const [name, setName] = useState(formData.name || "");
-  const [age, setAge] = useState(formData.age || "");
-  const [gender, setGender] = useState(
-    formData.gender || selectOptions.genderOptions[0]
-  );
-  const [race, setRace] = useState(
-    formData.race || selectOptions.raceOptions[0]
-  );
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-    setFormData({ ...formData, name: e.target.value });
-  };
-
-  const handleAgeChange = (e) => {
-    setAge(e.target.value);
-    setFormData({ ...formData, age: e.target.value });
-  };
-
-  const handleGenderChange = (selectedOption) => {
-    setGender(selectedOption);
-    setFormData({ ...formData, gender: selectedOption });
-  };
-
-  const handleRaceChange = (selectedOption) => {
-    setRace(selectedOption);
-    setFormData({ ...formData, race: selectedOption });
-  };
-
+const StepOne = (props) => {
   return (
     <section>
       <div className="row">
@@ -45,8 +15,8 @@ const StepOne = ({ formData, setFormData }) => {
               name="name"
               className="form-control"
               placeholder=""
-              value={name}
-              onChange={handleNameChange}
+              value={props.formData["name"]}
+              onChange={props.handleInputChange}
               required
             />
           </div>
@@ -60,8 +30,8 @@ const StepOne = ({ formData, setFormData }) => {
               name="age"
               type="number"
               className="form-control"
-              value={age}
-              onChange={handleAgeChange}
+              value={props.formData["age"]}
+              onChange={props.handleInputChange}
               required
             />
           </div>
@@ -70,13 +40,13 @@ const StepOne = ({ formData, setFormData }) => {
           <div className="form-group mb-3">
             <label className="form-label">Gender</label>
             <Select
-              name="gender"
+              name="sex"
               options={selectOptions.genderOptions}
               className="custom-react-select"
-              defaultValue={selectOptions.genderOptions[0]}
               isSearchable={false}
-              value={gender}
-              onChange={handleGenderChange}
+              onChange={(selectedOption) =>
+                props.handleSelectChange(selectedOption, "sex")
+              }
             />
           </div>
         </div>
@@ -84,13 +54,16 @@ const StepOne = ({ formData, setFormData }) => {
           <div className="form-group mb-3">
             <label className="form-label">Race</label>
             <Select
-              name="race"
+              name="race_recode_W_B_AI_API"
               options={selectOptions.raceOptions}
               className="custom-react-select"
-              defaultValue={selectOptions.raceOptions[0]}
               isSearchable={false}
-              value={race}
-              onChange={handleRaceChange}
+              onChange={(selectedOption) =>
+                props.handleSelectChange(
+                  selectedOption,
+                  "race_recode_W_B_AI_API"
+                )
+              }
             />
           </div>
         </div>
