@@ -1,12 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import loadable from "@loadable/component";
-import pMinDelay from "p-min-delay";
-import { Dropdown, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-import Timeline from "./Timeline";
 import { ThemeContext } from "../../../context/ThemeContext";
-
+import axios from "axios";
 //Images
 import avatar from "../../../images/avatar/1.jpg";
 import avatar1 from "../../../images/avatar/2.jpg";
@@ -14,33 +9,6 @@ import avatar2 from "../../../images/avatar/3.jpg";
 import avatar3 from "../../../images/avatar/4.jpg";
 import avatar4 from "../../../images/avatar/5.jpg";
 // import avatar5 from "../../../images/avatar/6.jpg";
-
-const cardWidget = [
-  {
-    bgcolor: "bg-primary",
-    icons: "flaticon-381-user-7",
-    title: "King Abdullah University Hospital",
-    digit: "Admin",
-  },
-  {
-    bgcolor: "bg-danger",
-    icons: "flaticon-381-user-9",
-    title: "Patients",
-    digit: "76",
-  },
-  {
-    bgcolor: "bg-success",
-    icons: "flaticon-381-percentage",
-    title: "Predictions",
-    digit: "100",
-  },
-  {
-    bgcolor: "bg-info",
-    icons: "flaticon-381-heart",
-    title: "Services",
-    digit: "2",
-  },
-];
 
 const patientTable = [
   {
@@ -92,6 +60,41 @@ const patientTable = [
 ];
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("http://127.0.0.1:5000/patientCount");
+      const jsonData = res.data;
+      setData(jsonData);
+    };
+    fetchData();
+  }, []);
+  const cardWidget = [
+    {
+      bgcolor: "bg-primary",
+      icons: "flaticon-381-user-7",
+      title: "King Abdullah University Hospital",
+      digit: "Admin",
+    },
+    {
+      bgcolor: "bg-danger",
+      icons: "flaticon-381-user-9",
+      title: "Patients",
+      digit: data.count,
+    },
+    {
+      bgcolor: "bg-success",
+      icons: "flaticon-381-percentage",
+      title: "Predictions",
+      digit: "100",
+    },
+    {
+      bgcolor: "bg-info",
+      icons: "flaticon-381-heart",
+      title: "Services",
+      digit: "1",
+    },
+  ];
   const [active, setActive] = useState("3");
   const { changeBackground } = useContext(ThemeContext);
   useEffect(() => {
